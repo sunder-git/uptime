@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+   - name: File systems check
+     shell: df -h
+     register: result
+     
+   - debug: 
+       var: "result.stdout_lines"
